@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <button 
+                class="btn btn-info"
+                (click)="toggleDetails()"
+            >
+                Display Details
+            </button>
+            <p *ngIf="showSecret">secret: the password is tuna</p>
+            <div 
+                *ngFor="let logItem of clickArray"
+                [ngStyle]="{backgroundColor: logItem > firstClick ? 'blue' : 'transparent'}"
+                [ngClass]="{'white-text': logItem > firstClick}"
+                >
+                {{ logItem }}
+            </div>
+        </div>
+    </div>
+</div>
